@@ -12,7 +12,6 @@ namespace CustomerProductTests
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(120, 40);
             // original test methods
             //TestProductConstructors();
             //TestProductToString();
