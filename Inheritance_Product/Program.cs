@@ -34,11 +34,151 @@ namespace CustomerProductTests
             //TestProductListSaveWithInheritance();
             //TestProductEqualsWithInheritance();
             //TestProductGetHashCodeWithInheritance();
+            
+            // hand test methods
+            TestHandConstructors();
+            TestHandAddCard();
+            TestHandDiscard();
+            TestHandGetCardAndIndexer();
+            TestHandHasCard();
+            TestHandIndexOf();
+            TestHandToString();
 
             Console.ReadLine();
         }
+        
+        #region Hand Tests
 
-        #region Inheritance Tests
+        static void TestHandConstructors()
+        {
+            Hand emptyHand = new Hand();
+
+            Deck deck = new Deck();
+            Hand dealtHand = new Hand(deck, 5);
+
+            Console.WriteLine("Testing hand constructors");
+            Console.WriteLine("Default constructor NumCards. Expecting 0. " + emptyHand.NumCards);
+            Console.WriteLine("Overloaded constructor NumCards. Expecting 5. " + dealtHand.NumCards);
+            Console.WriteLine("Deck NumCards after dealing 5. Expecting 47. " + deck.NumCards);
+            Console.WriteLine();
+        }
+
+        static void TestHandAddCard()
+        {
+            Hand hand = new Hand();
+            Card card = new Card(3, 2);
+
+            Console.WriteLine("Testing hand AddCard");
+            Console.WriteLine("Before AddCard NumCards. Expecting 0. " + hand.NumCards);
+
+            hand.AddCard(card);
+
+            Console.WriteLine("After AddCard NumCards. Expecting 1. " + hand.NumCards);
+            Console.WriteLine("Card added. Expecting 3 of Diamonds. " + hand.GetCard(0));
+            Console.WriteLine();
+        }
+
+        static void TestHandDiscard()
+        {
+            Hand hand = new Hand();
+
+            Card c1 = new Card(1, 1);
+            Card c2 = new Card(7, 3);
+            Card c3 = new Card(13, 4);
+
+            hand.AddCard(c1);
+            hand.AddCard(c2);
+            hand.AddCard(c3);
+
+            Console.WriteLine("Testing hand Discard");
+            Console.WriteLine("Before discard NumCards. Expecting 3. " + hand.NumCards);
+
+            Card discarded = hand.Discard(1);
+
+            Console.WriteLine("Discarded card. Expecting 7 of Hearts. " + discarded);
+            Console.WriteLine("After discard NumCards. Expecting 2. " + hand.NumCards);
+            Console.WriteLine("Card now at index 1. Expecting King of Spades. " + hand.GetCard(1));
+            Console.WriteLine();
+        }
+
+        static void TestHandGetCardAndIndexer()
+        {
+            Hand hand = new Hand();
+
+            Card c1 = new Card(10, 1);
+            Card c2 = new Card(12, 2);
+
+            hand.AddCard(c1);
+            hand.AddCard(c2);
+
+            Console.WriteLine("Testing hand GetCard and indexer");
+            Console.WriteLine("GetCard(0). Expecting Ten of Clubs. " + hand.GetCard(0));
+            Console.WriteLine("GetCard(1). Expecting Queen of Diamonds. " + hand.GetCard(1));
+            Console.WriteLine("Indexer [0]. Expecting Ten of Clubs. " + hand[0]);
+            Console.WriteLine("Indexer [1]. Expecting Queen of Diamonds. " + hand[1]);
+            Console.WriteLine();
+        }
+
+        static void TestHandHasCard()
+        {
+            Hand hand = new Hand();
+
+            Card c1 = new Card(3, 1);
+            Card c2 = new Card(8, 4);
+            Card c3 = new Card(11, 2);
+
+            hand.AddCard(c1);
+            hand.AddCard(c2);
+
+            Console.WriteLine("Testing hand HasCard");
+            Console.WriteLine("HasCard(card object). Expecting true. " + hand.HasCard(c1));
+            Console.WriteLine("HasCard(card object not in hand). Expecting false. " + hand.HasCard(c3));
+            Console.WriteLine("HasCard(value, suit). Expecting true. " + hand.HasCard(8, 4));
+            Console.WriteLine("HasCard(value, suit) not in hand. Expecting false. " + hand.HasCard(8, 3));
+            Console.WriteLine("HasCard(value). Expecting true. " + hand.HasCard(3));
+            Console.WriteLine("HasCard(value) not in hand. Expecting false. " + hand.HasCard(13));
+            Console.WriteLine();
+        }
+
+        static void TestHandIndexOf()
+        {
+            Hand hand = new Hand();
+
+            Card c1 = new Card(2, 1);
+            Card c2 = new Card(5, 2);
+            Card c3 = new Card(9, 3);
+
+            hand.AddCard(c1);
+            hand.AddCard(c2);
+            hand.AddCard(c3);
+
+            Console.WriteLine("Testing hand IndexOf");
+            Console.WriteLine("IndexOf(card object). Expecting 1. " + hand.IndexOf(c2));
+            Console.WriteLine("IndexOf(card object not in hand). Expecting -1. " + hand.IndexOf(new Card(12, 4)));
+            Console.WriteLine("IndexOf(value, suit). Expecting 2. " + hand.IndexOf(9, 3));
+            Console.WriteLine("IndexOf(value, suit) not in hand. Expecting -1. " + hand.IndexOf(9, 4));
+            Console.WriteLine("IndexOf(value). Expecting 0. " + hand.IndexOf(2));
+            Console.WriteLine("IndexOf(value) not in hand. Expecting -1. " + hand.IndexOf(13));
+            Console.WriteLine();
+        }
+
+        static void TestHandToString()
+        {
+            Hand hand = new Hand();
+
+            hand.AddCard(new Card(1, 1));
+            hand.AddCard(new Card(11, 3));
+            hand.AddCard(new Card(13, 4));
+
+            Console.WriteLine("Testing hand ToString");
+            Console.WriteLine("Expecting Ace of Clubs, Jack of Hearts, King of Spades:");
+            Console.WriteLine(hand.ToString());
+            Console.WriteLine();
+        }
+
+        #endregion
+
+        /*#region Inheritance Tests
 
         static void TestClothingConstructor()
         {
@@ -325,6 +465,6 @@ namespace CustomerProductTests
             Console.WriteLine("Expecting 2, T000, 200, First product, 20 " + p1);
             Console.WriteLine();
         }
-        #endregion
+        #endregion */
     }
 }

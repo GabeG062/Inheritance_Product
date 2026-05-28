@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance_Product", "Inheritance_Product\Inheritance_Product.csproj", "{CEA89C69-7B32-46C0-90F9-7585A7B68483}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance_Product", "{CEA89C69-7B32-46C0-90F9-7585A7B68483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
