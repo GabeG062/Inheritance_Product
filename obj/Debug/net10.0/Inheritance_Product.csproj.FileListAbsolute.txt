@@ -1,0 +1,5 @@
+/home/starman062/RiderProjects/Inheritance_Product/obj/Debug/net10.0/Inheritance_Product.GeneratedMSBuildEditorConfig.editorconfig
+/home/starman062/RiderProjects/Inheritance_Product/obj/Debug/net10.0/Inheritance_Product.AssemblyInfoInputs.cache
+/home/starman062/RiderProjects/Inheritance_Product/obj/Debug/net10.0/Inheritance_Product.AssemblyInfo.cs
+/home/starman062/RiderProjects/Inheritance_Product/obj/Debug/net10.0/Inheritance_Product.csproj.CoreCompileInputs.cache
+/home/starman062/RiderProjects/Inheritance_Product/obj/Debug/net10.0/Inheritance_Product.sourcelink.json
