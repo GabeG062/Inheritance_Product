@@ -11,10 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2018ea63-b40e-4942-9f9a-6909e40fc86b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Inheritance_Product/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Inheritance_Product/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Inheritance_Product/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inheritance_Product.sln" beforeDir="false" afterPath="$PROJECT_DIR$/deleter.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Inheritance_Product/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inheritance_Product.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Inheritance_Product.slnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/Inheritance_Product.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/Inheritance_Product.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/Inheritance_Product.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/Inheritance_Product.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/Inheritance_Product.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ref/Inheritance_Product.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ref/Inheritance_Product.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/refint/Inheritance_Product.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/refint/Inheritance_Product.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="55" />
+    <option name="cachedIndexableFilesCount" value="74" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -34,7 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Gear.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Hand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Product.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -109,6 +116,7 @@
       <workItem from="1779950915953" duration="26000" />
       <workItem from="1779950990813" duration="76000" />
       <workItem from="1779951083855" duration="699000" />
+      <workItem from="1780087955080" duration="414000" />
     </task>
     <servers />
   </component>
