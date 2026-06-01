@@ -10,6 +10,7 @@ namespace CardClasses
 
         public Hand()
         {
+            
         }
 
         public Hand(Deck d, int numCards)

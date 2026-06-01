@@ -37,20 +37,126 @@ namespace CustomerProductTests
             //TestProductGetHashCodeWithInheritance();
             
             // hand test methods
-            TestHandConstructors();
-            TestHandAddCard();
-            TestHandDiscard();
-            TestHandGetCardAndIndexer();
-            TestHandHasCard();
-            TestHandIndexOf();
-            TestHandToString();
+            //TestHandConstructors();
+            //TestHandAddCard();
+            //TestHandDiscard();
+            //TestHandGetCardAndIndexer();
+            //TestHandHasCard();
+            //TestHandIndexOf();
+            //TestHandToString();
+            
+            //21 Hand test methods
+            TestBJHandConstructors();
+            TestBJHandHasAce();
+            TestBJHandScore();
+            TestBJHandIsBusted();
 
             Console.ReadLine();
         }
+        #region BJHand Tests
+
+        static void TestBJHandConstructors()
+        {
+            BJHand emptyHand = new BJHand();
+
+            Deck deck = new Deck();
+            BJHand dealtHand = new BJHand(deck, 2);
+
+            Console.WriteLine("Testing BJHand constructors");
+            Console.WriteLine("Default constructor NumCards. Expecting 0. " + emptyHand.NumCards);
+            Console.WriteLine("Overloaded constructor NumCards. Expecting 2. " + dealtHand.NumCards);
+            Console.WriteLine("Deck NumCards after dealing 2. Expecting 50. " + deck.NumCards);
+            Console.WriteLine();
+        }
+
+        static void TestBJHandHasAce()
+        {
+            BJHand handWithAce = new BJHand();
+            handWithAce.AddCard(new Card(1, 1));
+            handWithAce.AddCard(new Card(8, 2));
+
+            BJHand handWithoutAce = new BJHand();
+            handWithoutAce.AddCard(new Card(10, 3));
+            handWithoutAce.AddCard(new Card(7, 4));
+
+            Console.WriteLine("Testing BJHand HasAce");
+            Console.WriteLine("Hand with Ace. Expecting true. " + handWithAce.HasAce);
+            Console.WriteLine("Hand without Ace. Expecting false. " + handWithoutAce.HasAce);
+            Console.WriteLine();
+        }
+
+        static void TestBJHandScore()
+        {
+            BJHand numberHand = new BJHand();
+            numberHand.AddCard(new Card(7, 1));
+            numberHand.AddCard(new Card(9, 2));
+
+            BJHand faceCardHand = new BJHand();
+            faceCardHand.AddCard(new Card(13, 3));
+            faceCardHand.AddCard(new Card(8, 4));
+
+            BJHand blackjackHand = new BJHand();
+            blackjackHand.AddCard(new Card(1, 1));
+            blackjackHand.AddCard(new Card(10, 2));
+
+            BJHand softAceHand = new BJHand();
+            softAceHand.AddCard(new Card(1, 3));
+            softAceHand.AddCard(new Card(6, 4));
+
+            BJHand adjustedAceHand = new BJHand();
+            adjustedAceHand.AddCard(new Card(1, 1));
+            adjustedAceHand.AddCard(new Card(9, 2));
+            adjustedAceHand.AddCard(new Card(5, 3));
+
+            BJHand twoAceHand = new BJHand();
+            twoAceHand.AddCard(new Card(1, 1));
+            twoAceHand.AddCard(new Card(1, 2));
+            twoAceHand.AddCard(new Card(9, 3));
+            
+            BJHand twoFaceHand = new BJHand();
+            twoFaceHand.AddCard(new Card(12, 1));
+            twoFaceHand.AddCard(new Card(13, 2));
+            twoFaceHand.AddCard(new Card(1, 3));
+
+            Console.WriteLine("Testing BJHand Score");
+            Console.WriteLine("7 + 9. Expecting 16. " + numberHand.Score);
+            Console.WriteLine("King + 8. Expecting 18. " + faceCardHand.Score);
+            Console.WriteLine("Ace + 10. Expecting 21. " + blackjackHand.Score);
+            Console.WriteLine("Ace + 6. Expecting 17. " + softAceHand.Score);
+            Console.WriteLine("Ace + 9 + 5. Expecting 15. " + adjustedAceHand.Score);
+            Console.WriteLine("Ace + Ace + 9. Expecting 21. " + twoAceHand.Score);
+            Console.WriteLine("King + Queen + Ace. Expecting 21. " + twoFaceHand.Score);
+            Console.WriteLine();
+        }
+
+        static void TestBJHandIsBusted()
+        {
+            BJHand notBustedHand = new BJHand();
+            notBustedHand.AddCard(new Card(10, 1));
+            notBustedHand.AddCard(new Card(9, 2));
+
+            BJHand bustedHand = new BJHand();
+            bustedHand.AddCard(new Card(10, 1));
+            bustedHand.AddCard(new Card(9, 2));
+            bustedHand.AddCard(new Card(5, 3));
+
+            BJHand aceNotBustedHand = new BJHand();
+            aceNotBustedHand.AddCard(new Card(1, 1));
+            aceNotBustedHand.AddCard(new Card(9, 2));
+            aceNotBustedHand.AddCard(new Card(8, 3));
+
+            Console.WriteLine("Testing BJHand isBusted");
+            Console.WriteLine("10 + 9. Expecting false. " + notBustedHand.isBusted);
+            Console.WriteLine("10 + 9 + 5. Expecting true. " + bustedHand.isBusted);
+            Console.WriteLine("Ace + 9 + 8. Expecting false. " + aceNotBustedHand.isBusted);
+            Console.WriteLine();
+        }
+
+        #endregion
         
         #region Hand Tests
 
-        static void TestHandConstructors()
+        /*static void TestHandConstructors()
         {
             Hand emptyHand = new Hand();
 
@@ -175,12 +281,12 @@ namespace CustomerProductTests
             Console.WriteLine("Expecting Ace of Clubs, Jack of Hearts, King of Spades:");
             Console.WriteLine(hand.ToString());
             Console.WriteLine();
-        }
+        }*/
 
         #endregion
 
-        /*#region Inheritance Tests
-
+        #region Inheritance Tests
+/*
         static void TestClothingConstructor()
         {
             Clothing c1 = new Clothing(3, "C100", "Running tights", 69.99M, 3, "pants", "womens", "large", "blue", "Lucy");
@@ -290,14 +396,14 @@ namespace CustomerProductTests
             Console.WriteLine("Testing product list save and fill.");
             Console.WriteLine("After Fill Count.  Expecting 6. " + list.Count);
             Console.WriteLine("ToString.  Expect six products total, 2 clothing and 2 gear \n" + list.ToString());
-            
+
             Console.WriteLine();
-        }
+        }*/
 
         #endregion
 
         #region ProductList Tests
-
+/*
         static void TestProductListConstructor()
         {
             ProductList list = new ProductList();
@@ -414,11 +520,11 @@ namespace CustomerProductTests
             Console.WriteLine("Index 0.  Expecting first product in list to be T100 \n" + list[0]);
             Console.WriteLine("Index 'T200'.  Expecting product with code of T200 \n" + list["T200"]);
             Console.WriteLine();
-        }
+        }*/
         #endregion
 
         #region Product Tests
-
+/*
         static void TestProductConstructors()
         {
             Product p1 = new Product();
@@ -465,7 +571,7 @@ namespace CustomerProductTests
             p1.QuantityOnHand = 20;
             Console.WriteLine("Expecting 2, T000, 200, First product, 20 " + p1);
             Console.WriteLine();
-        }
-        #endregion */
+        }*/
+        #endregion 
     }
 }
