@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CardClasses
 {
-    public class BJHand : Hand
+    public class BJHand: Hand
     {
         //methods
-        public BJHand()
+        public BJHand(): base()
         {
             
         }
@@ -21,7 +21,7 @@ namespace CardClasses
         {
             get
             {
-                for (int i = 0; i > NumCards; i++)
+                for (int i = 0; i < NumCards; i++)
                 { 
                     if (GetCard(i).Value == 1)
                     {

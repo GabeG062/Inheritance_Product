@@ -46,15 +46,30 @@ namespace CustomerProductTests
             //TestHandToString();
             
             //21 Hand test methods
-            TestBJHandConstructors();
-            TestBJHandHasAce();
-            TestBJHandScore();
-            TestBJHandIsBusted();
+            //TestBJHandConstructors();
+            //TestBJHandHasAce();
+            //TestBJHandScore();
+            //TestBJHandIsBusted();
+            
+            TwentyOne game = new TwentyOne();
+            game.Play();
 
             Console.ReadLine();
         }
-        #region BJHand Tests
+        
+        #region 21 Game
 
+        static void Do21GamePlay()
+        {
+            BJHand playerHand = new BJHand();
+
+            Deck deck = new Deck();
+            BJHand dealtHand = new BJHand(deck, 2);
+        }
+
+#endregion
+        #region BJHand Tests
+        /*
         static void TestBJHandConstructors()
         {
             BJHand emptyHand = new BJHand();
@@ -151,7 +166,7 @@ namespace CustomerProductTests
             Console.WriteLine("Ace + 9 + 8. Expecting false. " + aceNotBustedHand.isBusted);
             Console.WriteLine();
         }
-
+        */
         #endregion
         
         #region Hand Tests

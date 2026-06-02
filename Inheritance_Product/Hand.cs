@@ -6,7 +6,7 @@ namespace CardClasses
 {
     public class Hand
     {
-        private List<Card> cards = new List<Card>();
+        protected List<Card> cards = new List<Card>();
 
         public Hand()
         {
